@@ -1,6 +1,6 @@
 [project]
 name = "lestra"
-version = "0"
+version = "0.0.2"
 description = ""
 authors = [
     { name = "lestra" }
@@ -38,5 +38,5 @@ build-backend = "hatchling.build"
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/..."]
+packages = ["src/lestra"]
 
