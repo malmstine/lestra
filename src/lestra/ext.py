@@ -1,4 +1,6 @@
 import typing as t
+import pydantic
+
 from lestra.io import parse
 
 
@@ -13,3 +15,11 @@ class lestra(str):
 
     def __getitem__(self, item):
         return self.__getattr__(item)
+
+
+def is_struct(struct: type[pydantic.BaseModel] , st: str | lestra):
+    try:
+        struct(**parse(st))
+        return True
+    except (TypeError, ValueError):
+        return False
